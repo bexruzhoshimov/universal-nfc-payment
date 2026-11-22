@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Universal NFC Payment v1.0</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="header">
+      <h1>Universal NFC Payment v1.0</h1>
+    </header>
+
+    <section class="card amount-card">
+      <span class="card-label">To‘lov summasi</span>
+      <div class="amount-display">
+        <span id="amount-text">0</span>
+        <span id="currency-text">so‘m</span>
+      </div>
+      <button type="button" id="copy-amount-btn" class="btn btn-secondary">
+        Summani nusxalash
+      </button>
+    </section>
+
+    <section class="card payment-card">
+      <div class="card-toggle-group">
+        <button type="button" id="btn-uzcard" class="toggle-btn active">UZCARD</button>
+        <button type="button" id="btn-humo" class="toggle-btn">HUMO</button>
+      </div>
+      <div class="card-details">
+        <span class="card-label">Karta raqami</span>
+        <div id="card-number" class="card-number">0000 0000 0000 0000</div>
+        <span class="card-label">Egasining ismi</span>
+        <div id="card-holder" class="card-holder">---</div>
+      </div>
+      <button type="button" id="copy-card-btn" class="btn btn-primary">
+        Karta raqamini nusxalash
+      </button>
+    </section>
+
+    <section class="card apps-card">
+      <h2 class="section-title">To‘lov ilovasini tanlang</h2>
+      <div id="apps-container" class="apps-grid"></div>
+    </section>
+
+    <section class="card instructions-card">
+      <h2 class="section-title">Ketma-ketlik</h2>
+      <ol class="steps-list">
+        <li>1. Karta turini tanlang.</li>
+        <li>2. Ilovani tanlang — karta raqami avtomatik nusxalanadi.</li>
+        <li>3. Ilovada karta raqamini qo‘ying va summani kiriting.</li>
+      </ol>
+    </section>
+
+    <footer class="footer">
+      <p class="notice">
+        Bu sahifa to‘lovni tasdiqlamaydi va tekshirmaydi. CVV, PIN yoki SMS-kodni hech kimga bermang.
+      </p>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast hidden">Nusxalandi</div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
