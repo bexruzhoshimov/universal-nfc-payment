@@ -96,15 +96,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const appsGrid = document.getElementById("apps-container");
     if (Array.isArray(CONFIG.APPS)) {
       CONFIG.APPS.forEach(function (app) {
-        const btn = document.createElement("button");
-        btn.type = "button";
+        // <a> bo'lishi shart: iOS universal link faqat haqiqiy link bosilganda ilovani ochadi
+        const btn = document.createElement("a");
+        btn.href = app.url;
         btn.className = "app-btn";
         btn.textContent = app.name;
         btn.addEventListener("click", function () {
-          // Nusxalash tugagach o'tamiz, aks holda Safari clipboard yozuvini bekor qilishi mumkin
-          copyToClipboard(getRawCardNumber()).then(function () {
-            window.location.href = app.url;
-          });
+          copyToClipboard(getRawCardNumber());
         });
         appsGrid.appendChild(btn);
       });
